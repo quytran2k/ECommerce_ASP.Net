@@ -40,3 +40,9 @@
 /Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/System.CodeDom.dll
 /Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/obj/Debug/net7.0/EcommerceWeb.csproj.CopyComplete
+/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/Ecommerce.DataAccess.dll
+/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/Ecommerce.Models.dll
+/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/Ecommerce.Utility.dll
+/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/Ecommerce.DataAccess.pdb
+/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/Ecommerce.Models.pdb
+/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/bin/Debug/net7.0/Ecommerce.Utility.pdb

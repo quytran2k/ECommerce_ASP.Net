@@ -1,0 +1,12 @@
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/bin/Debug/net7.0/Ecommerce.Models.deps.json
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/bin/Debug/net7.0/Ecommerce.Models.dll
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/bin/Debug/net7.0/Ecommerce.Models.pdb
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/Ecommerce.Models.csproj.AssemblyReference.cache
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/Ecommerce.Models.AssemblyInfoInputs.cache
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/Ecommerce.Models.AssemblyInfo.cs
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/Ecommerce.Models.csproj.CoreCompileInputs.cache
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/Ecommerce.Models.dll
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/refint/Ecommerce.Models.dll
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/Ecommerce.Models.pdb
+/Users/quytran/RiderProjects/Ecommerce/Ecommerce.Models/obj/Debug/net7.0/ref/Ecommerce.Models.dll

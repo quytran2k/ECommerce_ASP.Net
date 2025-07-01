@@ -399,6 +399,42 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "Ecommerce.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Ecommerce.Models": "1.0.0",
+          "Ecommerce.Utility": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.20",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.18"
+        },
+        "compile": {
+          "bin/placeholder/Ecommerce.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ecommerce.DataAccess.dll": {}
+        }
+      },
+      "Ecommerce.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Ecommerce.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ecommerce.Models.dll": {}
+        }
+      },
+      "Ecommerce.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Ecommerce.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ecommerce.Utility.dll": {}
+        }
       }
     }
   },
@@ -1017,10 +1053,26 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Ecommerce.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../Ecommerce.DataAccess/Ecommerce.DataAccess.csproj",
+      "msbuildProject": "../Ecommerce.DataAccess/Ecommerce.DataAccess.csproj"
+    },
+    "Ecommerce.Models/1.0.0": {
+      "type": "project",
+      "path": "../Ecommerce.Models/Ecommerce.Models.csproj",
+      "msbuildProject": "../Ecommerce.Models/Ecommerce.Models.csproj"
+    },
+    "Ecommerce.Utility/1.0.0": {
+      "type": "project",
+      "path": "../Ecommerce.Utility/Ecommerce.Utility.csproj",
+      "msbuildProject": "../Ecommerce.Utility/Ecommerce.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Ecommerce.DataAccess >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.20",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.20",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.18"
@@ -1051,7 +1103,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/quytran/RiderProjects/Ecommerce/Ecommerce.DataAccess/Ecommerce.DataAccess.csproj": {
+              "projectPath": "/Users/quytran/RiderProjects/Ecommerce/Ecommerce.DataAccess/Ecommerce.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
