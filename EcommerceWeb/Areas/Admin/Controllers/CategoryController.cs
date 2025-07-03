@@ -1,20 +1,24 @@
 using Ecommerce.DataAccess.Data;
+using Ecommerce.DataAccess.Repository;
+using Ecommerce.DataAccess.Repository.IRepository;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceWeb.Controllers;
+namespace EcommerceWeb.Areas.Admin.Controllers;
+
+[Area("Admin")]
 
 public class CategoryController : Controller
 {
-    private readonly ApplicationDbContext _db;
-    public CategoryController(ApplicationDbContext dbContext)
+    private readonly IUnitOfWork _unitOfWork;
+    public CategoryController(IUnitOfWork unitOfWork)
     {
-        _db = dbContext;
+        _unitOfWork = unitOfWork;
     }
     // GET
     public IActionResult Index()
     {
-        List<Category> categories = _db.Categories.ToList();
+        List<Category> categories = _unitOfWork.Category.GetAll().ToList();
         return View(categories);
     }
 
@@ -37,8 +41,8 @@ public class CategoryController : Controller
         }
 
         if (!ModelState.IsValid) return View();
-        _db.Categories.Add(obj);
-        _db.SaveChanges();
+        _unitOfWork.Category.Add(obj);
+        _unitOfWork.Save();
         TempData["Message"] = "Category added successfully";
         return RedirectToAction("Index");
     }
@@ -49,7 +53,7 @@ public class CategoryController : Controller
         {
             return NotFound();
         }
-        Category? categoryFromDb = _db.Categories.Find(id);
+        Category? categoryFromDb = _unitOfWork.Category.Get(category => category.Id == id);
         // Find only search primary key, but first or default can help you to search other attribute
         // which is not primary key and return null if not found
         // Category? categoryFromDb1 = _db.Categories.FirstOrDefault(category => category.Name == "test");
@@ -73,8 +77,8 @@ public class CategoryController : Controller
         }
 
         if (!ModelState.IsValid) return View();
-        _db.Categories.Update(obj);
-        _db.SaveChanges();
+        _unitOfWork.Category.Update(obj);
+        _unitOfWork.Save();
         TempData["Message"] = "Category edited successfully";
         return RedirectToAction("Index");
     }
@@ -85,7 +89,7 @@ public class CategoryController : Controller
         {
             return NotFound();
         }
-        Category? categoryFromDb = _db.Categories.Find(id);
+        Category? categoryFromDb = _unitOfWork.Category.Get(category => category.Id == id);
         if (categoryFromDb == null)
         {
             return NotFound();
@@ -96,13 +100,13 @@ public class CategoryController : Controller
     [HttpPost, ActionName("Delete")]
     public IActionResult DeletePOST(int? id)
     {
-        Category? categoryFromDb = _db.Categories.Find(id);
+        Category? categoryFromDb = _unitOfWork.Category.Get(category => category.Id == id);
         if (categoryFromDb == null)
         {
             return NotFound();
         }
-        _db.Categories.Remove(categoryFromDb);
-        _db.SaveChanges();
+        _unitOfWork.Category.Remove(categoryFromDb);
+        _unitOfWork.Save();
         TempData["Message"] = "Category deleted successfully";
         return RedirectToAction("Index");
     }
