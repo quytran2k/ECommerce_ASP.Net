@@ -14,6 +14,9 @@ obj/
 .idea/
 *.sln.iml
 
+## Ignore images folder
+wwwroot/images/
+
 ## Ignore user secrets
 secrets.json
 
