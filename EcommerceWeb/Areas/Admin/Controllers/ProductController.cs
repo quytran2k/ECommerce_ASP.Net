@@ -2,7 +2,9 @@ using Ecommerce.DataAccess.Data;
 using Ecommerce.DataAccess.Repository;
 using Ecommerce.DataAccess.Repository.IRepository;
 using Ecommerce.Models;
+using Ecommerce.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EcommerceWeb.Areas.Admin.Controllers;
 
@@ -24,14 +26,36 @@ public class ProductController : Controller
 
     public IActionResult Create()
     {
-        return View();
+        IEnumerable<SelectListItem> categoryList = _unitOfWork.Category.GetAll().Select(category => new SelectListItem
+            {
+                Text = category.Name,
+                Value = category.Id.ToString()
+            }
+        );
+        // ViewBag.CategoryList = categoryList;
+        ProductVM productVM = new()
+        {
+            CategoryList = categoryList,
+            Product = new Product()
+        };
+        return View(productVM);
     }
 
     [HttpPost]
-    public IActionResult Create(Product obj)
+    public IActionResult Create(ProductVM productVM)
     {
-        if (!ModelState.IsValid) return View();
-        _unitOfWork.Product.Add(obj);
+        if (!ModelState.IsValid)
+        {
+            IEnumerable<SelectListItem> categoryList = _unitOfWork.Category.GetAll().Select(category => new SelectListItem
+                {
+                    Text = category.Name,
+                    Value = category.Id.ToString()
+                }
+            );
+            productVM.CategoryList = categoryList;
+            return View(productVM);
+        }
+        _unitOfWork.Product.Add(productVM.Product);
         _unitOfWork.Save();
         TempData["Message"] = "Product added successfully";
         return RedirectToAction("Index");
