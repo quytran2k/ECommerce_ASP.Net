@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/images/.DS_Store",
+      "PackagePath": "staticwebassets/images/.DS_Store"
+    },
+    {
+      "Id": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/images/product/8fbe2244-dc4e-4fc7-b97c-6acd13622989.svg",
+      "PackagePath": "staticwebassets/images/product/8fbe2244-dc4e-4fc7-b97c-6acd13622989.svg"
+    },
+    {
       "Id": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+SZbVl9nIn9P3JfsRFwWNgsFanNRAhpQVGv9SNDWTpY=",
+  "Hash": "VQ+w3t7VE16ksKtsf9p624pQEHmdXKcV+nVMktuxh38=",
   "Source": "EcommerceWeb",
   "BasePath": "_content/EcommerceWeb",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/images/.DS_Store",
+      "SourceId": "EcommerceWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/",
+      "BasePath": "_content/EcommerceWeb",
+      "RelativePath": "images/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/.DS_Store"
+    },
+    {
+      "Identity": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/images/product/8fbe2244-dc4e-4fc7-b97c-6acd13622989.svg",
+      "SourceId": "EcommerceWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/",
+      "BasePath": "_content/EcommerceWeb",
+      "RelativePath": "images/product/8fbe2244-dc4e-4fc7-b97c-6acd13622989.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/product/8fbe2244-dc4e-4fc7-b97c-6acd13622989.svg"
     },
     {
       "Identity": "/Users/quytran/RiderProjects/Ecommerce/EcommerceWeb/wwwroot/js/site.js",
