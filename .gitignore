@@ -1,0 +1,49 @@
+## Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+
+## Ignore build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+## Ignore Rider files
+.idea/
+*.sln.iml
+
+## Ignore images folder
+wwwroot/images/
+
+## Ignore user secrets
+secrets.json
+
+## Ignore dotnet artifacts
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+## Others
+*.db
+*.sqlite
+.env
+*.swp
+*.tmp
+*.bak
+
+# Ignore test results
+TestResults/
+coverage/
+*.coverage
+
+# Ignore node_modules (if using React, Angular in Views)
+node_modules/
+dist/
