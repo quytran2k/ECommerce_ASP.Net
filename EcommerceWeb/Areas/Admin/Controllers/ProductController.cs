@@ -46,7 +46,7 @@ public class ProductController : Controller
         }
         else
         {
-            productVM.Product = _unitOfWork.Product.Get(product => product.Id == id);;
+            productVM.Product = _unitOfWork.Product.Get(product => product.Id == id);
             return View(productVM);
         }
     }
@@ -80,7 +80,12 @@ public class ProductController : Controller
                     System.IO.File.Delete(oldImagePath);
                 }
             }
-            
+
+            if (!Directory.Exists(productPath))
+            {
+                Directory.CreateDirectory(productPath);
+            }
+
             using (FileStream fs = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
             {
                 file.CopyTo(fs);
@@ -97,7 +102,7 @@ public class ProductController : Controller
             _unitOfWork.Product.Update(productVM.Product);
         }
         _unitOfWork.Save();
-        TempData["Message"] = "Product added successfully";
+        TempData["Message"] = $"Product {(productVM.Product.Id == 0 ? "created" : "updated")} successfully";
         return RedirectToAction("Index");
     }
     
