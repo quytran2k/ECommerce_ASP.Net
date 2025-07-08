@@ -14,6 +14,8 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+    public DbSet<Company> Companies { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -115,6 +117,9 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
                 CategoryId = 1,
                 ImageUrl = "",
             }
+        );
+        modelBuilder.Entity<Company>().HasData(
+            new Company { Id = 1, Name = "Company A", StreetAddress = "DN", City = "DN", State = "CL", PostalCode = "550000", PhoneNumber = "0231233322" }
         );
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Ecommerce.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,13 +12,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Ecommerce.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250708070654_AddCompanyModel")]
+    partial class AddCompanyModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.20")
+                .HasAnnotation("CompanyVersion", "7.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -112,7 +115,7 @@ namespace Ecommerce.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce.Models.Product", b =>
+            modelBuilder.Entity("Ecommerce.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -160,7 +163,7 @@ namespace Ecommerce.DataAccess.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Companys");
 
                     b.HasData(
                         new
@@ -476,7 +479,7 @@ namespace Ecommerce.DataAccess.Migrations
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
-            modelBuilder.Entity("Ecommerce.Models.Product", b =>
+            modelBuilder.Entity("Ecommerce.Models.Company", b =>
                 {
                     b.HasOne("Ecommerce.Models.Category", "Category")
                         .WithMany()
