@@ -24,7 +24,7 @@ public class ProductController : Controller
     // GET
     public IActionResult Index()
     {
-        List<Product> products = _unitOfWork.Product.GetAll("Category").ToList();
+        List<Product> products = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
         return View(products);
     }
 
@@ -143,7 +143,7 @@ public class ProductController : Controller
     [HttpGet]
     public IActionResult GetAll()
     {
-        List<Product> products = _unitOfWork.Product.GetAll("Category").ToList();
+        List<Product> products = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
         return Json(new { data = products });
     }
 

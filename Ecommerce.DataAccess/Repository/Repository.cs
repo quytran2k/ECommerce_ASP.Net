@@ -15,9 +15,13 @@ public class Repository<T>: IRepository<T> where T : class
         _dbContext = dbContext;
         this._dbSet = _dbContext.Set<T>();
     }
-    public IEnumerable<T> GetAll(string? includeProperties = null)
+    public IEnumerable<T> GetAll(Expression<Func<T, bool>>? predicate = null, string? includeProperties = null)
     {
         IQueryable<T> query = _dbSet;
+        if (predicate != null)
+        {
+            query = query.Where(predicate);
+        }
         if (!string.IsNullOrEmpty(includeProperties))
         {
             foreach (var includeProps in includeProperties
@@ -29,9 +33,20 @@ public class Repository<T>: IRepository<T> where T : class
         return query.ToList();
     }
 
-    public T Get(Expression<Func<T, bool>> predicate, string? includeProperties = null)
+    public T Get(Expression<Func<T, bool>> predicate, string? includeProperties = null, bool? tracked = false)
     {
         IQueryable<T> query = _dbSet;
+        if(tracked == false)
+        {
+            query = query.AsNoTracking();
+        }
+        else
+        {
+            query = query.AsTracking();
+        }
+        
+        query = query.Where(predicate);
+
         if (!string.IsNullOrEmpty(includeProperties))
         {
             foreach (var includeProps in includeProperties
@@ -40,7 +55,6 @@ public class Repository<T>: IRepository<T> where T : class
                 query = query.Include(includeProps);
             }
         }
-        query = query.Where(predicate);
         return query.FirstOrDefault();
     }
 
